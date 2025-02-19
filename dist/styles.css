@@ -1,0 +1,12 @@
+.HyperMD-codeblock.cm-line:has(.cm-quote) {
+  --dracula-pink: 255, 121, 198;
+  --dracula-yellow: 241, 250, 140;
+
+  span {
+    color: rgba(var(--dracula-yellow), 1) !important;
+  }
+  .cm-strong {
+    color: rgba(var(--dracula-pink), 1) !important;
+    font-weight: calc(var(--font-weight) + var(--bold-modifier));
+  }
+}

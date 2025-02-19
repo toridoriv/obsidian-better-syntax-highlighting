@@ -1,0 +1,65 @@
+{
+  "name": "obsidian-better-codeblocks",
+  "displayName": "Better Codeblocks",
+  "version": "0.1.0",
+  "description": "A plugin to improve the codeblocks in Obsidian. So far it only fixes an error with the syntax highlighting in Markdown.",
+  "license": "GPLv3",
+  "type": "module",
+  "author": {
+    "name": "Victoria Rodriguez",
+    "email": "vrodriguezfe@icloud.com",
+    "url": "https://github.com/toridoriv"
+  },
+  "homepage": "https://github.com/toridoriv/obsidian-better-codeblocks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toridoriv/obsidian-better-codeblocks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toridoriv/obsidian-better-codeblocks/issues",
+    "email": "vrodriguezfe@icloud.com"
+  },
+  "scripts": {
+    "build": "node --experimental-transform-types --no-warnings=ExperimentalWarnings esbuild.config.ts",
+    "chmod": "find scripts \\( -name '*.ts' -not -path '*/utils.ts' \\) -exec chmod +x {} \\;",
+    "generate:assets": "scripty",
+    "generate:example": "scripty",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "@toridoriv/eslint-config": "github:toridoriv/eslint-config",
+    "@types/node": "^22.13.4",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.20.1",
+    "nodemon": "^3.1.9",
+    "obsidian": "^1.8.7",
+    "prettier": "^3.5.1",
+    "scripty": "^2.1.1",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.13",
+    "@toridoriv/cliffy": "github:toridoriv/cliffy",
+    "@toridoriv/toolkit": "github:toridoriv/toolkit",
+    "deepseek-api": "^1.0.6",
+    "mustache": "^4.2.0",
+    "tslog": "^4.9.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/test/**",
+      "**/dist/**",
+      "**/example/**",
+      "**/tmp/**"
+    ],
+    "ext": "css,js,json,ts,mustache",
+    "exec": "npm run build",
+    "env": {
+      "NODE_ENV": "development"
+    }
+  }
+}

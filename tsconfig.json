@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowUnreachableCode": false,
+    "allowImportingTsExtensions": true,
+    "checkJs": true,
+    "declaration": false,
+    "exactOptionalPropertyTypes": true,
+    "isolatedModules": true,
+    "keyofStringsOnly": false,
+    "maxNodeModuleJsDepth": 3,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmit": true,
+    "noErrorTruncation": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "target": "esnext",
+    "typeRoots": ["./node_modules/@types/"],
+    "types": ["node"],
+    "useUnknownInCatchVariables": true
+  },
+  "exclude": ["node_modules", "tmp", ".tmp"],
+  "typeAcquisition": {
+    "enable": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "better-codeblocks",
+  "name": "Better Codeblocks",
+  "version": "0.1.0",
+  "description": "A plugin to improve the codeblocks in Obsidian. So far it only fixes an error with the syntax highlighting in Markdown.",
+  "author": "Victoria Rodriguez",
+  "authorUrl": "https://github.com/toridoriv",
+  "minAppVersion": "0.15.0",
+  "isDesktopOnly": false
+}
