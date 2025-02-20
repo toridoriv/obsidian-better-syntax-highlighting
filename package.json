@@ -31,6 +31,7 @@
   "devDependencies": {
     "@toridoriv/eslint-config": "github:toridoriv/eslint-config",
     "@types/node": "^22.13.4",
+    "@types/prismjs": "^1.26.5",
     "@typescript-eslint/eslint-plugin": "^8.24.1",
     "builtin-modules": "^4.0.0",
     "esbuild": "^0.25.0",
