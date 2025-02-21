@@ -1,5 +1,6 @@
-import { loadPrism } from "obsidian";
-import type { Grammar, GrammarRest, GrammarValue, TokenObject } from "prismjs";
+import type * as obsidian from "obsidian";
+import type { GrammarRest, GrammarValue, TokenObject } from "prismjs";
+import { Announcer } from "./announcer.ts";
 
 type PrismGrammar = GrammarRest & Record<string, GrammarValue>;
 
@@ -19,7 +20,13 @@ export function patchCodeMirror() {
   const { CodeMirror } = window;
   const markdownMode = CodeMirror.modes.markdown;
 
-  if (markdownMode.isPatch) return;
+  if (markdownMode.isPatch) {
+    if (process.env.NODE_ENV === "development") {
+      Announcer.instance.info("CodeMirror is already patched");
+    }
+
+    return;
+  }
 
   const markdownModeBody = markdownMode.toString();
   const index = markdownModeBody.indexOf(token);
@@ -52,10 +59,13 @@ export function patchCodeMirror() {
   });
 
   CodeMirror.defineMode("markdown", markdownModeFactory);
+
+  if (process.env.NODE_ENV === "development") {
+    Announcer.instance.info("CodeMirror is patched");
+  }
 }
 
-export async function patchPrism() {
-  const Prism = await loadPrism();
+export function patchPrism(Prism: obsidian.Prism) {
   const markdown = Prism.languages.markdown as PrismGrammar;
   const bold = {
     ...getGrammarToken(markdown, "bold"),
@@ -96,7 +106,7 @@ export async function patchPrism() {
   Prism.languages["md"] = Prism.languages.extend("md", grammar);
 
   if (process.env.NODE_ENV === "development") {
-    Prism.highlightAll();
+    Announcer.instance.info("Prism patched successfully");
   }
 }
 
