@@ -43,21 +43,3 @@ div.markdown-source-view .cm-line span.cm-hmd-codeblock.cm-strikethrough,
 code.language-markdown.is-loaded .token.strike {
   text-decoration: line-through;
 }
-
-/* .HyperMD-codeblock.cm-line:has(.cm-quote) {
-  span {
-    color: var(--codeblock-markdown-quote-color);
-  }
-  .cm-strong {
-    color: var(--codeblock-markdown-bold-quote-color);
-    font-weight: calc(var(--font-weight) + var(--bold-modifier));
-  }
-
-  .cm-em {
-    color: var(--codeblock-markdown-italic-quote-color);
-  }
-}
-
-.HyperMD-codeblock.cm-line .cm-strong {
-  color: var(--codeblock-markdown-bold-color);
-} */
