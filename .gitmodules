@@ -1,3 +1,6 @@
 [submodule "example/.obsidian/plugins/hot-reload"]
 	path = example/.obsidian/plugins/hot-reload
 	url = git@github.com:pjeby/hot-reload.git
+[submodule "example/Better Syntax Highlighting/.obsidian/plugins/hot-reload"]
+	path = example/Better Syntax Highlighting/.obsidian/plugins/hot-reload
+	url = git@github.com:pjeby/hot-reload.git
