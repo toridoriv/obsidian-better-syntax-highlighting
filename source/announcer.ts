@@ -1,12 +1,12 @@
 import { Notice } from "obsidian";
-import type { BetterCodeBlocksPlugin } from "./plugin.ts";
+import type { BetterSyntaxHighlighting } from "./plugin.ts";
 import { getMessageFragment } from "./html.ts";
 
 export class Announcer {
   static #instance: Announcer | null = null;
-  static plugin: BetterCodeBlocksPlugin;
+  static plugin: BetterSyntaxHighlighting;
 
-  static initialize(plugin: BetterCodeBlocksPlugin) {
+  static initialize(plugin: BetterSyntaxHighlighting) {
     if (this.#instance) return;
 
     this.plugin = plugin;
@@ -21,7 +21,7 @@ export class Announcer {
     return this.#instance;
   }
 
-  private constructor(readonly plugin: BetterCodeBlocksPlugin) {}
+  private constructor(readonly plugin: BetterSyntaxHighlighting) {}
 
   /**
    * Creates a notice with the plugin's name.

@@ -1,3 +1,3 @@
-import { BetterCodeBlocksPlugin } from "./plugin.ts";
+import { BetterSyntaxHighlighting } from "./plugin.ts";
 
-export default BetterCodeBlocksPlugin;
+export default BetterSyntaxHighlighting;

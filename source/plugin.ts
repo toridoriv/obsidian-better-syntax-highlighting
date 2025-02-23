@@ -2,7 +2,7 @@ import { loadPrism, MarkdownView, Plugin } from "obsidian";
 import { Announcer } from "./announcer.ts";
 import { patchCodeMirror, patchPrism } from "./patches.ts";
 
-export class BetterCodeBlocksPlugin extends Plugin {
+export class BetterSyntaxHighlighting extends Plugin {
   onload(): Promise<void> | void {
     Announcer.initialize(this);
 

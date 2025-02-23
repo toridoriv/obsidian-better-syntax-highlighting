@@ -1,8 +1,8 @@
 {
-  "name": "obsidian-better-codeblocks",
-  "displayName": "Better Codeblocks",
-  "version": "0.1.0",
-  "description": "A plugin to improve the codeblocks in Obsidian. So far it only fixes an error with the syntax highlighting in Markdown.",
+  "name": "obsidian-better-syntax-highlighting",
+  "displayName": "Better Syntax Highlighting",
+  "version": "0.2.0",
+  "description": "A plugin to improve the syntax highlighting in Obsidian.",
   "license": "GPLv3",
   "type": "module",
   "author": {
@@ -10,13 +10,13 @@
     "email": "vrodriguezfe@icloud.com",
     "url": "https://github.com/toridoriv"
   },
-  "homepage": "https://github.com/toridoriv/obsidian-better-codeblocks",
+  "homepage": "https://github.com/toridoriv/obsidian-better-syntax-highlighting",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toridoriv/obsidian-better-codeblocks.git"
+    "url": "git+https://github.com/toridoriv/obsidian-better-syntax-highlighting.git"
   },
   "bugs": {
-    "url": "https://github.com/toridoriv/obsidian-better-codeblocks/issues",
+    "url": "https://github.com/toridoriv/obsidian-better-syntax-highlighting/issues",
     "email": "vrodriguezfe@icloud.com"
   },
   "scripts": {
