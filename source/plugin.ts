@@ -14,8 +14,6 @@ export class BetterSyntaxHighlighting extends Plugin {
         patchCodeMirror();
         patchPrism(Prism);
 
-        console.log({ view });
-
         if (view && view.file) {
           view.previewMode.rerender(true);
         }
