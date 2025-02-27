@@ -12,7 +12,14 @@ import { eslintConfig } from "@toridoriv/eslint-config";
  */
 export default [
   // Add your own ignore patterns here.
-  eslintConfig.ignorePatterns("package*.json", "dist/", "node_modules/", "example/"),
+  eslintConfig.ignorePatterns(
+    "package*.json",
+    "dist/",
+    "node_modules/",
+    "example/*/.obsidian/plugins/*",
+    "example/*/.obsidian/*.json",
+    "!example/**/.obsidian/snippets/*",
+  ),
   ...eslintConfig.javascript.browser,
   ...eslintConfig.javascript.node,
   eslintConfig.serialization.json,
