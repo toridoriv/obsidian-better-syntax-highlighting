@@ -81,7 +81,7 @@ export function patchPrism(Prism: obsidian.Prism) {
   const grammar: PrismGrammar = {
     blockquote: {
       alias: ["block", "thematic-break"],
-      pattern: /^>{1,} ?[^\n\r]*[\n|\r]{0,}/gm,
+      pattern: /^[ \t]{0,}>{1,} ?[^\n\r]*[\n|\r]{0,}/gm,
       inside: {
         bold,
         italic,
