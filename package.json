@@ -26,7 +26,8 @@
     "generate:example": "scripty",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "start": "nodemon"
+    "start": "nodemon",
+    "sync:samples": "scripty"
   },
   "devDependencies": {
     "@toridoriv/eslint-config": "github:toridoriv/eslint-config",
