@@ -21,6 +21,8 @@
   },
   "scripts": {
     "build": "node --experimental-transform-types --no-warnings=ExperimentalWarnings esbuild.config.ts",
+    "build:dev": "NODE_ENV=development npm run build",
+    "postbuild:dev": "npm run generate:example",
     "chmod": "find scripts \\( -name '*.ts' -not -path '*/utils.ts' \\) -exec chmod +x {} \\;",
     "generate:assets": "scripty",
     "generate:example": "scripty",
