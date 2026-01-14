@@ -1,4 +1,4 @@
-#!/usr/bin/env node --experimental-transform-types --no-warnings=ExperimentalWarnings
+#!/usr/bin/env -S node --experimental-transform-types --disable-warning=ExperimentalWarning
 import * as utils from "../utils.ts";
 
 utils.logger.info("Generating assets...");
