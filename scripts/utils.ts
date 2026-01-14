@@ -1,9 +1,10 @@
-import { createRequire } from "node:module";
-import { Logger } from "tslog";
-import { colors } from "@toridoriv/cliffy";
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import nodePath from "node:path";
+
+import { colors } from "@cliffy/ansi/colors";
 import type { PluginManifest } from "obsidian";
+import { Logger } from "tslog";
 
 export type PackageJson = typeof import("../package.json");
 export type FileContent<T = string> = {

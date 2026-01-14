@@ -30,6 +30,7 @@
     "sync:samples": "scripty"
   },
   "devDependencies": {
+    "@cliffy/ansi": "npm:@jsr/cliffy__ansi@^1.0.0-rc.8",
     "@toridoriv/eslint-config": "github:toridoriv/eslint-config",
     "@types/node": "^22.13.4",
     "@types/prismjs": "^1.26.5",
@@ -46,7 +47,6 @@
   },
   "dependencies": {
     "@sinclair/typebox": "^0.34.13",
-    "@toridoriv/cliffy": "github:toridoriv/cliffy",
     "@toridoriv/toolkit": "github:toridoriv/toolkit",
     "deepseek-api": "^1.0.6",
     "mustache": "^4.2.0"
