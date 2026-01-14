@@ -41,6 +41,7 @@
     "obsidian": "^1.8.7",
     "prettier": "^3.5.1",
     "scripty": "github:toridoriv/scripty",
+    "tslog": "^4.10.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
@@ -48,8 +49,7 @@
     "@toridoriv/cliffy": "github:toridoriv/cliffy",
     "@toridoriv/toolkit": "github:toridoriv/toolkit",
     "deepseek-api": "^1.0.6",
-    "mustache": "^4.2.0",
-    "tslog": "^4.9.3"
+    "mustache": "^4.2.0"
   },
   "nodemonConfig": {
     "ignore": [
