@@ -1,8 +1,13 @@
 import type * as obsidian from "obsidian";
 import type { GrammarRest, GrammarValue, TokenObject } from "prismjs";
+
 import { Announcer } from "./announcer.ts";
+import { sourcegraphQuery } from "./languages/sourcegraph-query.ts";
+import { Language } from "./languages/utils.ts";
 
 type PrismGrammar = GrammarRest & Record<string, GrammarValue>;
+
+const languages: Language[] = [sourcegraphQuery];
 
 function getGrammarToken(grammar: PrismGrammar, key: string): TokenObject {
   const def = grammar[key];
@@ -60,12 +65,16 @@ export function patchCodeMirror() {
 
   CodeMirror.defineMode("markdown", markdownModeFactory);
 
+  for (const language of languages) {
+    language.registerOn(CodeMirror);
+  }
+
   if (process.env.NODE_ENV === "development") {
     Announcer.instance.info("CodeMirror is patched");
   }
 }
 
-export function patchPrism(Prism: obsidian.Prism) {
+function patchMarkdown(Prism: obsidian.Prism) {
   const markdown = Prism.languages.markdown as PrismGrammar;
   const bold = {
     ...getGrammarToken(markdown, "bold"),
@@ -104,6 +113,14 @@ export function patchPrism(Prism: obsidian.Prism) {
 
   Prism.languages["markdown"] = Prism.languages.extend("markdown", grammar);
   Prism.languages["md"] = Prism.languages.extend("md", grammar);
+}
+
+export function patchPrism(Prism: obsidian.Prism) {
+  patchMarkdown(Prism);
+
+  for (const language of languages) {
+    language.registerOn(Prism);
+  }
 
   if (process.env.NODE_ENV === "development") {
     Announcer.instance.info("Prism patched successfully");
@@ -119,8 +136,49 @@ declare global {
 
   namespace CodeMirror {
     interface ModeFactory<T> {
-      dependencies: string[];
-      isPatch: boolean;
+      dependencies?: string[];
+      isPatch?: boolean;
+    }
+
+    interface ModeInfo {
+      name: string;
+      mime: string;
+      mode: string;
+      ext?: string[];
+      alias?: string[];
+    }
+
+    var modeInfo: ModeInfo[];
+
+    function defineSimpleMode(id: string, simpleMode: SimpleMode): void;
+
+    namespace SimpleMode {
+      type Token = string | (string | null)[];
+
+      type Rule = {
+        regex: RegExp;
+        token?: Token;
+        mode?: Mode;
+        indent?: boolean;
+        dedent?: boolean;
+      };
+
+      type Meta = {
+        dontIndentStates?: string[];
+        lineComment?: string;
+        fold?: string;
+        [key: string]: unknown;
+      };
+
+      type Mode = {
+        spec: string;
+        end: RegExp;
+      };
+    }
+
+    interface SimpleMode {
+      start: SimpleMode.Rule[];
+      meta?: SimpleMode.Meta;
     }
   }
 }

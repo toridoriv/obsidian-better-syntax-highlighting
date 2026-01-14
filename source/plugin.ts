@@ -1,4 +1,5 @@
 import { loadPrism, MarkdownView, Plugin } from "obsidian";
+
 import { Announcer } from "./announcer.ts";
 import { patchCodeMirror, patchPrism } from "./patches.ts";
 
